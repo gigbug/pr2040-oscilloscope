@@ -3,16 +3,18 @@
   "revision": "V0.1-PROTOTYPE",
   "date": "2026-08-26",
   "scope": "1CH hand-solder analog frontend research before production PCB",
-  "status": "schematic prototype / HV not validated",
+  "status": "schematic generator committed; HV not validated",
   "files": [
     "README.md",
+    "tools/generate_schematic.py",
     "frontend_rp2040.pro",
-    "frontend_rp2040.sch",
+    "frontend_rp2040.kicad_pro",
+    "frontend-cache.lib",
     "sym-lib-table",
     "BOM.csv",
-    "frontend-cache.lib",
-    "frontend_rp2040.kicad_pro",
-    "docs/wiring_notes.md",
-    "docs/frontend_rp2040_DIP_gui_nguoi_ban.xlsx"
+    "docs/wiring_notes.md"
+  ],
+  "generated": [
+    "frontend_rp2040.sch"
   ]
 }
