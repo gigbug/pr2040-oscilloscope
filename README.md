@@ -22,16 +22,35 @@ This project captures the agreed 1-channel automotive analog frontend used to va
 - ADC output filter: 330 Ω + 1.5 nF.
 - Clamp diodes: 1N5711 through-hole for hand-solder prototype.
 
-## Important KiCad note
+## Generate the KiCad schematic
 
-`frontend_rp2040.sch` is a **legacy Eeschema schematic** intentionally used because it is simple, self-contained and can be imported by modern KiCad.
+The connected GitHub API used to publish this repository is optimized for text files, so the schematic is generated deterministically from source instead of committing an unverified long payload.
+
+After cloning the repository, run:
+
+```bash
+python tools/generate_schematic.py
+```
+
+This creates:
+
+```text
+frontend_rp2040.sch
+```
+
+The generator is the source of truth for V0.1. Any schematic design changes should be made in `tools/generate_schematic.py` and the BOM/docs updated in the same commit.
+
+## Open in KiCad
+
+`frontend_rp2040.sch` is a legacy Eeschema schematic intentionally used because it is simple, self-contained and can be imported by modern KiCad.
 
 Open it in KiCad 7/8/9:
 
-1. Open KiCad / Schematic Editor.
-2. Open `frontend_rp2040.sch`.
-3. When KiCad offers conversion, save it as `frontend_rp2040.kicad_sch`.
-4. Keep `frontend-cache.lib` and `sym-lib-table` in the project directory.
+1. Run `python tools/generate_schematic.py`.
+2. Open KiCad / Schematic Editor.
+3. Open `frontend_rp2040.sch`.
+4. When KiCad offers conversion, save it as `frontend_rp2040.kicad_sch`.
+5. Keep `frontend-cache.lib` and `sym-lib-table` in the project directory.
 
 `frontend_rp2040.kicad_pro` is provided so the directory is recognized as a KiCad project. KiCad may add normal project settings when first saved.
 
@@ -118,7 +137,7 @@ The compensation values are **starting values**, not production-final values.
 
 ## Files
 
-- `frontend_rp2040.sch` — main schematic.
+- `tools/generate_schematic.py` — source of truth for the generated schematic.
 - `frontend-cache.lib` — self-contained legacy symbols.
 - `sym-lib-table` — local symbol-library mapping.
 - `frontend_rp2040.pro` — legacy project stub.
