@@ -1,0 +1,18 @@
+{
+  "project": "automotive_frontend_rp2040",
+  "revision": "V0.1-PROTOTYPE",
+  "date": "2026-08-26",
+  "scope": "1CH hand-solder analog frontend research before production PCB",
+  "status": "schematic prototype / HV not validated",
+  "files": [
+    "README.md",
+    "frontend_rp2040.pro",
+    "frontend_rp2040.sch",
+    "sym-lib-table",
+    "BOM.csv",
+    "frontend-cache.lib",
+    "frontend_rp2040.kicad_pro",
+    "docs/wiring_notes.md",
+    "docs/frontend_rp2040_DIP_gui_nguoi_ban.xlsx"
+  ]
+}

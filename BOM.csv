@@ -1,0 +1,27 @@
+﻿Ref,Qty,Value,Package/Preference,Purpose,Prototype note
+U1,1,MCP6024-I/P,DIP-14,Quad op-amp: VBIAS + signal buffer,Power at 3.3V
+"K1,K2",2,HK19F-DC5V-SHG,THT relay,Range selection,Logical relay pins in schematic; verify physical datasheet
+"Q1,Q2",2,2N2222A or S8050,TO-92,Relay low-side drivers,Verify transistor pin order by manufacturer
+D1-D4,4,1N5711,DO-35,Primary/secondary Schottky clamps,BAT54S can be used on SMD prototype instead
+"D5,D6",2,1N4148,DO-35,Relay flyback,Cathode to +5V
+R1-R6,6,180k 1%,"Axial THT, rated >=200V preferred",LOW divider high side,Series chain
+"R7,R13,R23",3,47k 1%,Axial THT,Divider low side to VBIAS,0.1% useful for calibration
+"R9-R12,R15-R22",12,2.7M 1% HV,"Axial THT, rated >=200V each",MID/HIGH divider high side,Do not use unknown-voltage resistors for final HV test
+"R8,R14,R24",3,2.2k 1%,Axial THT,Compensation damping,Starting value
+R25,1,1k 1%,Axial THT,Primary clamp current limiting,After relay
+"R26,R27",2,10k 1%,Axial THT,VBIAS divider,Matched pair preferred
+R28,1,330R 1%,Axial THT,ADC RC filter,Start with C9=1.5nF
+"R29,R31",2,1k,Axial THT,Transistor base resistor,GPIO -> base
+"R30,R32",2,10k,Axial THT,Base pulldown,Keeps relay OFF on reset
+R33,1,1k,Axial THT,3V3 clamp rail bleed,Limits back-power rise
+"C1,C3,C5",3,4.7pF / >=1kV C0G,THT ceramic,High-side compensation,Tune on real board
+C2,1,100pF C0G,THT ceramic,LOW low-side compensation,Tune
+C4,1,1nF C0G,THT ceramic,MID low-side compensation,Tune
+C6,1,2.2nF C0G,THT ceramic,HIGH low-side compensation,Tune
+C7,1,100nF,THT ceramic,VBIAS decoupling,Near U1
+C8,1,1uF,THT,VBIAS bulk filter,
+C9,1,1.5nF C0G,THT ceramic,ADC RC filter,
+C10,1,100nF,THT ceramic,U1 decoupling,Place at pins 4/11
+C11,1,4.7uF,THT,3V3 bulk,
+J1,1,2-pin terminal,5.08mm THT,Analog input,VIN/GND
+J2,1,1x6 header,2.54mm THT,RP2040/Pico bench link,"3V3,GND,ADC,K1,K2,5V"

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "frontend-cache")(type "Legacy")(uri "${KIPRJMOD}/frontend-cache.lib")(options "")(descr "Self-contained prototype symbols"))
+)
