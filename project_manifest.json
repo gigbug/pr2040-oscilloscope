@@ -1,20 +1,13 @@
 {
   "project": "automotive_frontend_rp2040",
-  "revision": "V0.1-PROTOTYPE",
+  "revision": "V0.1-DEPRECATED",
   "date": "2026-08-26",
-  "scope": "1CH hand-solder analog frontend research before production PCB",
-  "status": "schematic generator committed; HV not validated",
-  "files": [
-    "README.md",
-    "tools/generate_schematic.py",
-    "frontend_rp2040.pro",
-    "frontend_rp2040.kicad_pro",
-    "frontend-cache.lib",
-    "sym-lib-table",
-    "BOM.csv",
-    "docs/wiring_notes.md"
+  "status": "deprecated: legacy schematic only; no routed PCB",
+  "do_not_use_for": [
+    "PCB fabrication",
+    "routing validation",
+    "HV testing"
   ],
-  "generated": [
-    "frontend_rp2040.sch"
-  ]
+  "replacement": "V0.2 native KiCad 8 project with .kicad_sch and routed .kicad_pcb",
+  "notes": "V0.1 remains in Git history for traceability only."
 }
